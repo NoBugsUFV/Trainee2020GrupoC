@@ -1,0 +1,23 @@
+/* .input{
+    font-size: 16px !important;
+} */
+
+.regular{
+    font-size: 16px;
+}
+
+.medium{
+    font-size: 14px;
+}
+
+.small{
+    font-size: 12px !important;
+}
+
+.tiny{
+    font-size: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
