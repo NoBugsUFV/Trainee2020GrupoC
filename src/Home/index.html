@@ -8,16 +8,30 @@
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/colors.css">
     <link rel="stylesheet" href="../styles/fonts.css">
+    
+    <script type="text/javascript">
+        function navigateToUserLogin()
+        {
+            location.href="../UserLogin/"
+        }
+    </script>
+
 </head>
 <body>
     <div class="ui container">
         <h1 class="ui  center aligned">Sistema de Gerenciamento de Certificados</h1>
+
+        <div class="ui breadcrumb">
+            <div class="section" style="margin-right: 7px;">Você está em:</div>
+            <div class="active section">Home</div>
+        </div>
+
         <div class="ui internally celled grid">
             <div class="row">
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Usuários</h3>
                     <p>Visualize todos os seus certificados</p>
-                    <button class='ui button blue'>Meus certificados</button>
+                    <button class='ui button blue' onclick="navigateToUserLogin()" >Meus certificados</button>
                 </div>
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Administradores</h3>
