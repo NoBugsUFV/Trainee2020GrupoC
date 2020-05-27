@@ -1,6 +1,5 @@
 <?php
     $id = $_GET['id'];
-    // echo $id;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -81,11 +80,6 @@
 </html>
 
 <script>
-    // document.getElementById("txt_codigoRegistro").innerHTML = certificado.codigoRegistro;
-    // document.getElementById("txt_dataRegistro").innerHTML = certificado.dataRegistro;
-    // document.getElementById("txt_valido").innerHTML = certificado.valido;
-    // document.getElementById("txt_descricao").innerHTML = certificado.descricao;
-
     function handleCertificates(id){
         $.post("../../../backend/src/controllers/CertificateController/select.php",{
             id:id
@@ -102,15 +96,6 @@
             document.getElementById("txt_dataRegistro").innerHTML = data[3];
             document.getElementById("txt_valido").innerHTML = valido;
             document.getElementById("txt_descricao").innerHTML = data[4];
-            // for (var i = 0; i < data.length; i++) {
-            //     let valido = "";
-            //     if(data[i][4] == 1)
-            //         valido = "Sim"
-            //     else   
-            //         valido="Não"
-            //     adicionaLinha(data[i][1], data[i][2], valido, data[i][0]);
-            // }
-
         });
     }
     document.onload = handleCertificates(id);
