@@ -1,11 +1,11 @@
 <?php
-    // $cpf = $_POST['cpf'];
-    $cpf = "12345678999";
+    $cpf = $_POST['cpf'];
     include '../../database/connection.php';
       
     $sql = "SELECT certificado.* FROM certificado
         INNER JOIN usuario
-        ON certificado.cpf = usuario.cpf;";
+        ON certificado.cpf = usuario.cpf 
+        WHERE usuario.cpf='$cpf'";
     $result = $conn->query($sql);
 
     $resultado = array();

@@ -13,34 +13,12 @@
     <link rel="stylesheet" href="styles.css">
     
     <script type="text/javascript">
-        function navigateToCertificateDetails(){
-            window.location.href="../CertificateDetails/"
+        function navigateToCertificateDetails(id){
+            // alert(id);
+            window.location.href='../CertificateDetails/?id='+id;
         }
 
-        const cpf = localStorage.getItem('cpf');
-        
-        
-
-        const certificados = [
-            {
-                codigoRegistro: "DDD7R788Y",
-                dataRegistro:"2020-05-05",
-                validado: "Sim",
-                descricao: "VI Semana Nacional de Ciência e Tecnologia - Minicurso de Inteligência Artificial"
-            },
-            {
-                codigoRegistro: "TYDQR456G",
-                dataRegistro:"2019-04-27",
-                validado: "Sim",
-                descricao: "V Semana Nacional de Ciência e Tecnologia - Minicurso de Estrutura de Dados"
-            }
-        ]
-
-       
-
-        
-
-
+        const cpf = String(localStorage.getItem('cpf'));
     </script>
 </head>
 <body>
@@ -62,10 +40,11 @@
         
         <table class="ui single line table blue" id="tableCertificates">
             <thead>
-                <th style="width:35%;">Código de Registro</th>
-                <th style="width:35%;">Data de Registro</th>
-                <th style="width:15%;">Válido</th>
-                <th style="width:15%;"></th>
+                <th style="width:10%;">ID</th>
+                <th style="width:30%;">Código de Registro</th>
+                <th style="width:30%;">Data de Registro</th>
+                <th style="width:10%;">Válido</th>
+                <th style="width:20%;"></th>
             </thead>
         </table>
 
@@ -74,24 +53,26 @@
 </html>
 
 <script>
-    function adicionaLinha(codigoRegistro, dataRegistro, validado) {
+    function adicionaLinha(codigoRegistro, dataRegistro, validado, id) {
         var tabela = document.getElementById("tableCertificates");
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
         var celula1 = linha.insertCell(0);
-        var celula2 = linha.insertCell(1);   
-        var celula3 = linha.insertCell(2); 
-        var celula4 = linha.insertCell(3);
-        celula1.innerHTML = `<p>${codigoRegistro}</p>`;
-        celula2.innerHTML = `<p>${dataRegistro}</p>`;
-        celula3.innerHTML = `<p>${validado}</p>`;
-        celula4.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails()">Mais Informações e Download</button>`;
+        var celula2 = linha.insertCell(1);
+        var celula3 = linha.insertCell(2);   
+        var celula4 = linha.insertCell(3); 
+        var celula5 = linha.insertCell(4);
+        celula1.innerHTML = `<p>${id}</p>`;
+        celula2.innerHTML = `<p>${codigoRegistro}</p>`;
+        celula3.innerHTML = `<p>${dataRegistro}</p>`;
+        celula4.innerHTML = `<p>${validado}</p>`;
+        celula5.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${id})">Mais Informações e Download</button>`;
     }
 
     function handleCertificates(cpf){
         $.post("../../../backend/src/controllers/UserCertificatesController/select.php",{
             cpf:cpf
-        },function(response){
+        }).done(function(response){
             var data = JSON.parse(response);
             for (var i = 0; i < data.length; i++) {
                 let valido = "";
@@ -99,10 +80,10 @@
                     valido = "Sim"
                 else   
                     valido="Não"
-                adicionaLinha(data[i][1], data[i][2], valido);
+                adicionaLinha(data[i][1], data[i][2], valido, data[i][0]);
             }
 
-        })
+        });
     }
     document.onload = handleCertificates(cpf);
 </script>
