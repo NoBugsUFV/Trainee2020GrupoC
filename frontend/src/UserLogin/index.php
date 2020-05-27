@@ -11,15 +11,6 @@
     <link rel="stylesheet" href="styles.css">
     
     <script type="text/javascript">
-        function navigateToUserCertificates(){
-            window.location.href="../UserCertificates/"
-        }
-
-        const user = {
-            nome: "Guilherme",
-            cpf: "12345678999",
-        }
-
         var num1 = Math.floor(Math.random() * 10);
         var num2 = Math.floor(Math.random() * 10);
         var resposta = num1 + num2;
@@ -28,12 +19,12 @@
             document.getElementById("labelInputCaptcha").innerHTML = num1 + " + " + num2 + " = ";
         }
 
-        function handleLogin (){  
-            if(document.getElementById("txt_cpf").value == user.cpf && document.getElementById("txt_soma").value == resposta){
-                navigateToUserCertificates();
-            }else if(document.getElementById("txt_soma").value != resposta){ 
-                alert("A soma está errada!");
-                
+        function sumVerification(){
+            var soma = document.getElementById("txt_soma").value;
+            if(soma != resposta){
+                document.getElementById("buttonLoginSubmit").classList.add("disabled");
+            }else{
+                document.getElementById("buttonLoginSubmit").classList.remove("disabled");
             }
         }
     </script>
@@ -53,26 +44,30 @@
 
         <p>Para prosseguir preencha os seguintes campos corretamente:</p>
         
-        <div class="field">
-            <label for="txt_name">CPF:*</label>
-            <p class="fonte-cinza small">Somente números</p>
-            <div class="ui input">
-                <input type="text" name="txt_cpf" id="txt_cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
-            </div>
-        </div>
-            
-        <div class="field">
-            <label for="txt_numMatricula">Captcha:*</label>
-            <p class="fonte-cinza small">Digite os caracteres presentes na imagem</p>
-            <div class="ui labeled input">
-                <div class="ui label">
-                    <span id="labelInputCaptcha"></span>
+        <form action="../../../backend/src/controllers/SessionController/userSession.php" method="POST" id="form" class="ui form">
+            <div class="field">
+                <label for="txt_name">CPF:*</label>
+                <p class="fonte-cinza small">Somente números</p>
+                <div class="ui input">
+                    <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
                 </div>
-                <input type="text" id="txt_soma" id="buttonFormSubmit" placeholder="Informe a soma correta ...">
             </div>
-        </div>
+                
+            <div class="field">
+                <label for="txt_numMatricula">Captcha:*</label>
+                <p class="fonte-cinza small">Digite os caracteres presentes na imagem</p>
+                <div class="ui labeled input">
+                    <div class="ui label">
+                        <span id="labelInputCaptcha"></span>
+                    </div>
+                    <input type="text" id="txt_soma" id="buttonFormSubmit" onchange="sumVerification()" placeholder="Informe a soma correta ...">
+                </div>
+            </div>
 
-        <button id="buttonLoginSubmit" onclick="handleLogin()" class='ui button blue'>Entrar</button>
+            <button id="buttonLoginSubmit" onclick="handleLogin()" class='ui button blue disabled'>Entrar</button>
+
+        </form>
+
 
     </div>
 </body>
