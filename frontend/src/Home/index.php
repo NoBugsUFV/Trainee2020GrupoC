@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/colors.css">
     <link rel="stylesheet" href="../styles/fonts.css">
-    
     <script type="text/javascript">
         function navigateToUserLogin()
         {

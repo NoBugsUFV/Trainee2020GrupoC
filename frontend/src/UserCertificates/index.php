@@ -104,6 +104,5 @@
 
         })
     }
-
     document.onload = handleCertificates(cpf);
 </script>

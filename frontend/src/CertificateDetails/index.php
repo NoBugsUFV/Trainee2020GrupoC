@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/fonts.css">
     <link rel="stylesheet" href="styles.css">
     
+    
     <script type="text/javascript">
         function navigateToCertificateDetails(){
             window.location.href="../Home/"

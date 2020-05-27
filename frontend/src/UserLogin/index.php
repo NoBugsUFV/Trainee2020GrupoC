@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/colors.css">
     <link rel="stylesheet" href="../styles/fonts.css">
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="styles.css">   
     <script type="text/javascript">
         var num1 = Math.floor(Math.random() * 10);
         var num2 = Math.floor(Math.random() * 10);
