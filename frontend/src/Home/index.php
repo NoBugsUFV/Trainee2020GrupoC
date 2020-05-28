@@ -14,6 +14,11 @@
             location.href="../UserLogin/"
         }
 
+        function navigateToAdmLogin()
+        {
+            location.href="../AdmLogin/"
+        }
+
         
     </script>
 
@@ -37,7 +42,7 @@
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Administradores</h3>
                     <p>Gerencie os certificados dos usuários</p>
-                    <button class='ui button blue'>Gerenciar certificados</button>
+                    <button class='ui button blue' onclick="navigateToAdmLogin()">Gerenciar certificados</button>
                 </div>
             </div>
         </div>
