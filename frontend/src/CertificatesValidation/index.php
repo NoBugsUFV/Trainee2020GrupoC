@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>Meus Certificados</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- SEMANTIC UI IMPORTS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"><!--SEMANTIC UI CSS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!--JQUERY IMPORTS-->
+    <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script><!--SEMANTIC UI JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>    
+
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/colors.css">
     <link rel="stylesheet" href="../styles/fonts.css">
@@ -19,6 +22,28 @@
         }
 
         const cpf = String(localStorage.getItem('cpf'));
+
+        function handleToggleValidation(codigoRegistro, valido){
+            let confirmMsg;
+            if(valido){
+                confirmMsg = "Deseja validar esse certificado?";
+            } 
+            else{
+                confirmMsg = "Deseja desvalidar esse certificado?";
+            } 
+            if(confirm(confirmMsg)){
+                $.post("../../../backend/src/controllers/CertificateController/updateValidation.php",{
+                    codigoRegistro:codigoRegistro,
+                    valido:valido
+                }).done(function(response){
+                    alert(response);
+                    location.reload();
+                });
+            }else{
+                alert("ok");
+            }
+            
+        }
     </script>
 </head>
 <body>
@@ -66,14 +91,34 @@
             </div>
         </div>
         
-       
+        <!-- MODAL - CONFIRMAÇÃO DE VALIDAÇÃO -->
+        <div id="confirmValidar" class="ui basic tiny modal">
+            <div class="ui icon header">
+                <i class="trash icon"></i>
+                Deseja validar esse certificado?
+            </div>
+            <div class="actions">
+                <div class="ui red basic cancel inverted button">
+                <i class="remove icon"></i>
+                    Não
+                </div>
+                <div onclick='apagar()' class="ui green ok inverted button">
+                <i class="checkmark icon"></i>
+                    Sim
+                </div>
+            </div>
+        </div>
 
     </div>
+
+    
 </body>
 </html>
 
 <script>
-    function adicionaLinhaValidados(id, cpf, codigoRegistro, dataRegistro) {
+
+    
+    function adicionaLinhaValidados(cpf, codigoRegistro, dataRegistro) {
         var tabela = document.getElementById("tableValidatedCertificates");
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
@@ -83,11 +128,11 @@
         var celula4 = linha.insertCell(3); 
         celula1.innerHTML = `<p>${cpf}</p>`;
         celula2.innerHTML = `<p>${codigoRegistro}</p>`;
-        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${id})">Detalhes</button>`;
-        celula4.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${id})">Desvalidar</button>`;
+        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${codigoRegistro})">Detalhes</button>`;
+        celula4.innerHTML = `<button class="ui button blue tiny" onclick="handleToggleValidation(${codigoRegistro},${0} )">Desvalidar</button>`;
     }
 
-    function adicionaLinhaNaoValidados(id, cpf, codigoRegistro, dataRegistro) {
+    function adicionaLinhaNaoValidados(cpf, codigoRegistro, dataRegistro) {
         var tabela = document.getElementById("tableNotValidatedCertificates");
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
@@ -97,8 +142,8 @@
         var celula4 = linha.insertCell(3); 
         celula1.innerHTML = `<p>${cpf}</p>`;
         celula2.innerHTML = `<p>${codigoRegistro}</p>`;
-        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${id})">Detalhes</button>`;
-        celula4.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${id})">Validar</button>`;
+        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${codigoRegistro})">Detalhes</button>`;
+        celula4.innerHTML = `<button class="ui button blue tiny" onclick="handleToggleValidation(${codigoRegistro},${1} )">Validar</button>`;
     }
 
     function handleCertificates(){
@@ -109,10 +154,10 @@
             console.log(data);
             for (var i = 0; i < data.length; i++) {
                 let valido = "";
-                if(data[i][4] == 1){
+                if(data[i][3] == 1){
                     valido = "Sim";
                     // alert('boa');
-                    adicionaLinhaValidados(data[i][0], data[i][1], data[i][2], data[i][3]);
+                    adicionaLinhaValidados(data[i][0], data[i][1], data[i][2]);
                 }else {
                     valido="Não"
                     adicionaLinhaNaoValidados(data[i][0], data[i][1], data[i][2]);
@@ -122,4 +167,6 @@
         });
     }
     document.onload = handleCertificates();
+
+    
 </script>

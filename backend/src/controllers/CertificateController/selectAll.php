@@ -11,8 +11,6 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $itemTable = array();
-
-            array_push($itemTable,$row['id']);
             array_push($itemTable,$row['cpf']);
             array_push($itemTable,$row['codigoRegistro']);
             array_push($itemTable,$row['dataRegistro']);
