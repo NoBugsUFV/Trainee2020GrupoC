@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="ui container">
-        <h1 class="ui  center aligned">Sistema de Gerenciamento de Certificados - Teste</h1>
+        <h1 class="ui  center aligned">Sistema de Gerenciamento de Certificadosgu</h1>
 
         <div class="ui breadcrumb">
             <div class="section" style="margin-right: 7px;">Você está em:</div>
