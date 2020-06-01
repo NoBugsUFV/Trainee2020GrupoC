@@ -50,10 +50,6 @@
             <p id="txt_cpf"></p>
         </div>
         <div class="group">
-            <p class="bold medium label">ID:</p>
-            <p id="txt_id"></p>
-        </div>
-        <div class="group">
             <p class="bold medium label">Código de Registro:</p>
             <p id="txt_codigoRegistro"></p>
         </div>
@@ -86,16 +82,15 @@
         }).done(function(response){
             var data = JSON.parse(response);
             let valido = "";
-                if(data[5] == 1)
+                if(data[4] == 1)
                     valido = "Sim"
                 else   
                     valido="Não"
             document.getElementById("txt_cpf").innerHTML = data[0];
-            document.getElementById("txt_id").innerHTML = data[1];
-            document.getElementById("txt_codigoRegistro").innerHTML = data[2];
-            document.getElementById("txt_dataRegistro").innerHTML = data[3];
+            document.getElementById("txt_codigoRegistro").innerHTML = data[1];
+            document.getElementById("txt_dataRegistro").innerHTML = data[2];
             document.getElementById("txt_valido").innerHTML = valido;
-            document.getElementById("txt_descricao").innerHTML = data[4];
+            document.getElementById("txt_descricao").innerHTML = data[3];
         });
     }
     document.onload = handleCertificates(id);

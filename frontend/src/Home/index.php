@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/colors.css">
     <link rel="stylesheet" href="../styles/fonts.css">
+
     <script type="text/javascript">
         function navigateToUserLogin()
         {
@@ -18,14 +21,12 @@
         {
             location.href="../AdmLogin/"
         }
-
-        
     </script>
 
 </head>
 <body>
     <div class="ui container">
-        <h1 class="ui  center aligned">Sistema de Gerenciamento de Certificados</h1>
+        <h1 class="ui  center aligned">Sistema de Gerenciamento de Certificados - Teste</h1>
 
         <div class="ui breadcrumb">
             <div class="section" style="margin-right: 7px;">Você está em:</div>

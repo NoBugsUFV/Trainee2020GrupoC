@@ -48,7 +48,7 @@
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Cadastro de Certificados</h3>
                     <p>Você pode vincular ou desvincular um certificado a um usuário (clique no botão abaixo):</p>
-                    <button class='ui button blue' onclick="navigateToAdmLogin()">Gerenciar Cadastro de Ceritificados</button>
+                    <button class='ui button blue' onclick="navigateToGerenciarCertificados()">Gerenciar Cadastro de Ceritificados</button>
                 </div>
             </div>
         </div>

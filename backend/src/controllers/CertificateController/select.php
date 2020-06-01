@@ -1,9 +1,9 @@
 <?php
-    $id = $_POST['id'];
-    // $id="1";
+    // $codigoRegistro = $_POST['codigoRegistro'];
+    $codigoRegistro="1";
     include '../../database/connection.php';
       
-    $sql = "SELECT * FROM certificado where id='$id';";
+    $sql = "SELECT * FROM certificado where codigoRegistro='$codigoRegistro';";
     $result = $conn->query($sql);
 
     $resultado = array();
@@ -11,7 +11,6 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             array_push($resultado,$row['cpf']);
-            array_push($resultado,$row['id']);
             array_push($resultado,$row['codigoRegistro']);
             array_push($resultado,$row['dataRegistro']);
             array_push($resultado,$row['descricao']);

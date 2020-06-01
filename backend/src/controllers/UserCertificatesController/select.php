@@ -14,7 +14,6 @@
         while($row = $result->fetch_assoc()) {
             $itemTable = array();
 
-            array_push($itemTable,$row['id']);
             array_push($itemTable,$row['codigoRegistro']);
             array_push($itemTable,$row['dataRegistro']);
             array_push($itemTable,$row['descricao']);

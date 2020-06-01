@@ -40,20 +40,18 @@
         
         <table class="ui single line table blue" id="tableCertificates">
             <thead>
-                <th style="width:10%;">ID</th>
                 <th style="width:30%;">Código de Registro</th>
                 <th style="width:30%;">Data de Registro</th>
                 <th style="width:10%;">Válido</th>
                 <th style="width:20%;"></th>
             </thead>
         </table>
-
     </div>
 </body>
 </html>
 
 <script>
-    function adicionaLinha(codigoRegistro, dataRegistro, validado, id) {
+    function adicionaLinha(codigoRegistro, dataRegistro, validado) {
         var tabela = document.getElementById("tableCertificates");
         var numeroLinhas = tabela.rows.length;
         var linha = tabela.insertRow(numeroLinhas);
@@ -61,12 +59,10 @@
         var celula2 = linha.insertCell(1);
         var celula3 = linha.insertCell(2);   
         var celula4 = linha.insertCell(3); 
-        var celula5 = linha.insertCell(4);
-        celula1.innerHTML = `<p>${id}</p>`;
-        celula2.innerHTML = `<p>${codigoRegistro}</p>`;
-        celula3.innerHTML = `<p>${dataRegistro}</p>`;
-        celula4.innerHTML = `<p>${validado}</p>`;
-        celula5.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${id})">Mais Informações e Download</button>`;
+        celula1.innerHTML = `<p>${codigoRegistro}</p>`;
+        celula2.innerHTML = `<p>${dataRegistro}</p>`;
+        celula3.innerHTML = `<p>${validado}</p>`;
+        celula4.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${codigoRegistro})">Mais Informações e Download</button>`;
     }
 
     function handleCertificates(cpf){
@@ -76,13 +72,12 @@
             var data = JSON.parse(response);
             for (var i = 0; i < data.length; i++) {
                 let valido = "";
-                if(data[i][4] == 1)
+                if(data[i][2] == 1)
                     valido = "Sim"
                 else   
                     valido="Não"
-                adicionaLinha(data[i][1], data[i][2], valido, data[i][0]);
+                adicionaLinha(data[i][0], data[i][1], valido, data[i][3]);
             }
-
         });
     }
     document.onload = handleCertificates(cpf);

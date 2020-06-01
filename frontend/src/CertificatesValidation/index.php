@@ -17,7 +17,6 @@
     
     <script type="text/javascript">
         function navigateToCertificateDetails(id){
-            // alert(id);
             window.location.href='../CertificateDetails/?id='+id;
         }
 
