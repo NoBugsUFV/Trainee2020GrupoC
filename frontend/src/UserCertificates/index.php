@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="styles.css">
     
     <script type="text/javascript">
-        function navigateToCertificateDetails(id){
+        function navigateToCertificateDetails_User(id){
             // alert(id);
-            window.location.href='../CertificateDetails/?id='+id;
+            window.location.href='../CertificateDetails_User/?id='+id;
         }
 
         const cpf = String(localStorage.getItem('cpf'));
@@ -62,7 +62,7 @@
         celula1.innerHTML = `<p>${codigoRegistro}</p>`;
         celula2.innerHTML = `<p>${dataRegistro}</p>`;
         celula3.innerHTML = `<p>${validado}</p>`;
-        celula4.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${codigoRegistro})">Mais Informações e Download</button>`;
+        celula4.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails_User(${codigoRegistro})">Mais Informações e Download</button>`;
     }
 
     function handleCertificates(cpf){

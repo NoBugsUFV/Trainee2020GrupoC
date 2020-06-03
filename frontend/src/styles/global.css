@@ -8,9 +8,13 @@ button {
     cursor: pointer;
 }
 
-body {
+body {  
     font: 400 Roboto, sans-serif;
-    background: #dddddd;
+    background: #ffffff;
     -webkit-font-smoothing: antialiased;
     padding-top: 50px;
+}
+
+.container{
+    margin-bottom: 50px;
 }
