@@ -1,6 +1,6 @@
 <?php
-    // $codigoRegistro = $_POST['codigoRegistro'];
-    $codigoRegistro="1";
+    $codigoRegistro = $_POST['codigoRegistro'];
+    // $codigoRegistro="1";
     include '../../database/connection.php';
       
     $sql = "SELECT * FROM certificado where codigoRegistro='$codigoRegistro';";
