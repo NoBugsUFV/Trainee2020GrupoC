@@ -1,5 +1,5 @@
 <?php
-    $cpf = "11111111111";
+    // $cpf = "11111111111";
     include '../../database/connection.php';
       
     $sql = "INSERT INTO usuario (cpf)

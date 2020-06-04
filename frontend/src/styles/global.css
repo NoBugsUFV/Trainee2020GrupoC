@@ -10,7 +10,7 @@ button {
 
 body {  
     font: 400 Roboto, sans-serif;
-    background: #ffffff;
+    background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
     padding-top: 50px;
 }

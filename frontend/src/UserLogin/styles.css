@@ -1,7 +1,15 @@
 .ui.input{
-    width: 25% !important;
+    width: 100% !important;
 }
 
 .field{
     margin-bottom: 20px;
+}
+.button{
+    width: 100% !important;
+}
+
+#test{
+    margin-top: 20px;
+
 }
