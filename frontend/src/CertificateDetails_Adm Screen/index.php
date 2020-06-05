@@ -39,9 +39,9 @@
             <div class="section" style="margin-right: 7px;">Você está em:</div>
             <a class="section" href="../Home/">Home</a>
             <i class="right angle icon divider"></i>
-            <a class="section" href="../UserLogin/">Login</a>
+            <a class="section" href="../AdmLogin/">Login</a>
             <i class="right angle icon divider"></i>
-            <a class="section" href="../UserCertificates/">Meus Certificados</a>
+            <a class="section" href="../AdmPage/">Gerenciador de Certificados</a>
             <i class="right angle icon divider"></i>
             <div class="active section">Detalhes do Certificados</div>
         </div>
