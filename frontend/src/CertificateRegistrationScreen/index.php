@@ -34,34 +34,44 @@
             <i class="right angle icon divider"></i>
             <div class="active section">Cadastro de Certificados</div>
         </div>
+
+
         <div class="ui divider"></div>
+
         <p>Cadastre os certificados corretamente</p>
+
         <div class="ui form">
-        <form>
-        <div class="ui input">
-          <label>CPF</label> <br>
-          <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
-        </div>
-        
-         <div class="field">
-         <label>Descrição do certificado</label>
-         <textarea placeholder="https://www.instagram.com/p/B3UuvEbFCHs/?utm_source=ig_web_copy_link"></textarea>
-         
-         <label>Arquivo do PDF</label>
-         <div class="ui input">
-         <input type="file" placeholder="PDF">        
-        </div>  
-        <label>Validação do certificado</label>
-         <div class="ui buttons">
-         <button class="ui button">Desvalidado</button>
-        <div class="or" data-text="ou"></div>
-        <button class="ui blue button">Validado</button>
-               
-          </div>    
-          </div>
-          </div>
-          </div>
-      </form>
+            <form>
+                <div class="field">
+                    <label>CPF</label>
+                    <div class="ui input">
+                        <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
+                    </div>
+                <div>
+
+                
+            
+                <div class="field">
+                    <label>Descrição do certificado</label>
+                    <textarea placeholder="https://www.instagram.com/p/B3UuvEbFCHs/?utm_source=ig_web_copy_link"></textarea>
+                <div>
+
+                <div class="field">
+                    <label>Arquivo do PDF</label>
+                    <div class="ui input">
+                        <input type="file" placeholder="PDF">        
+                    </div>
+                <div>
+
+                <div class="field">
+                    <label>Validação do certificado</label>
+                    <div class="ui buttons">
+                        <button class="ui button">Desvalidado</button>
+                        <div class="or" data-text="ou"></div>
+                    <button class="ui blue button">Validado</button>
+                <div>
+        </form>
+    <div>
 </div>
 </body>
 </html>
