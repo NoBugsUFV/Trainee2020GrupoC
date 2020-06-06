@@ -36,13 +36,13 @@
         </div>
         <div class="ui divider"></div>
         <p>Cadastre os certificados corretamente</p>
-
+        <div class="ui form">
         <form>
         <div class="ui input">
           <label>CPF</label> <br>
           <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
         </div>
-        <div class="ui form">
+        
          <div class="field">
          <label>Descrição do certificado</label>
          <textarea placeholder="https://www.instagram.com/p/B3UuvEbFCHs/?utm_source=ig_web_copy_link"></textarea>
