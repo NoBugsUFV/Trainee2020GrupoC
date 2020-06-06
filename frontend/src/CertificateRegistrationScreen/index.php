@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Gerenciador de Certificados</title>
+    <title>Cadastro de Certificados</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
@@ -37,21 +37,31 @@
         <div class="ui divider"></div>
         <p>Cadastre os certificados corretamente</p>
 
+        <form>
+        <div class="ui input">
+          <label>CPF</label> <br>
+          <input type="number" maxlenght="11" size="11" placeholder="___.___.___-__">
+        </div>
         <div class="ui form">
-  <div class="three fields">
-    <div class="field">
-      <label>CPF</label>
-      <input type="text" placeholder="___.___.___-__">
-    </div>
-    <div class="field">
-      <label>Descrição do Certificado</label>
-      <input type="text" placeholder="Descrição">
-    </div>
-    <div class="field">
-      <label>Last name</label>
-      <input type="text" placeholder="Last Name">
+         <div class="field">
+         <label>Descrição do certificado</label>
+         <textarea placeholder="https://www.instagram.com/p/B3UuvEbFCHs/?utm_source=ig_web_copy_link"></textarea>
+         
+         <label>Arquivo do PDF</label>
+         <div class="ui input">
+         <input type="file" placeholder="PDF">
+        </div>
+
+        <label>Validação do certificado</label>
+         <div class="ui buttons">
+         <button class="ui button">Desvalidado</button>
+        <div class="or" data-text="ou"></div>
+        <button class="ui blue button">Validado</button>
+          </div>
+          
+  </div>
     
-    </div>
+</div>
   </div>
 </div>
 </body>
