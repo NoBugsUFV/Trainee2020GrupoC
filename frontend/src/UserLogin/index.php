@@ -42,30 +42,44 @@
         <div class="ui divider"></div>
 
         <p>Para prosseguir preencha os seguintes campos corretamente:</p>
+
         
-        <form action="../../../backend/src/controllers/SessionController/userSession.php" method="POST" id="form" class="ui form">
-            <div class="field">
-                <label for="txt_name">CPF:*</label>
-                <p class="fonte-cinza small">Somente números</p>
-                <div class="ui input">
-                    <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
-                </div>
-            </div>
+
+        <div class="ui grid">
+            <div class="five wide column">
                 
-            <div class="field">
-                <label for="txt_numMatricula">Captcha:*</label>
-                <p class="fonte-cinza small">Digite os caracteres presentes na imagem</p>
-                <div class="ui labeled input">
-                    <div class="ui label">
-                        <span id="labelInputCaptcha"></span>
-                    </div>
-                    <input type="text" id="txt_soma" id="buttonFormSubmit" onchange="sumVerification()" placeholder="Informe a soma correta ...">
-                </div>
             </div>
+            <div class="six wide column" id="test">
+                <form action="../../../backend/src/controllers/SessionController/userSession.php" method="POST" id="form" class="ui form">
+                    <div class="field">
+                        <label for="txt_name">CPF:*</label>
+                        <p class="fonte-cinza small">Somente números</p>
+                        <div class="ui input">
+                            <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
+                        </div>
+                    </div>
+                        
+                    <div class="field">
+                        <label for="txt_numMatricula">Captcha:*</label>
+                        <p class="fonte-cinza small">Digite os caracteres presentes na imagem</p>
+                        <div class="ui labeled input">
+                            <div class="ui label">
+                                <span id="labelInputCaptcha"></span>
+                            </div>
+                            <input type="text" id="txt_soma" id="buttonFormSubmit" onchange="sumVerification()" placeholder="Informe a soma correta ...">
+                        </div>
+                    </div>
 
-            <button id="buttonLoginSubmit" onclick="handleLogin()" class='ui button blue disabled'>Entrar</button>
+                    <button id="buttonLoginSubmit" onclick="handleLogin()" class='ui button blue disabled large right labeled icon'><i class="chevron right icon"></i>Entrar</button>
 
-        </form>
+                </form>
+            </div>
+            <div class="five wide column">
+                
+            </div>
+        </div>
+        
+        
 
 
     </div>

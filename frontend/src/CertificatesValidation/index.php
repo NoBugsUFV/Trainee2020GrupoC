@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="styles.css">
     
     <script type="text/javascript">
-        function navigateToCertificateDetails(id){
-            window.location.href='../CertificateDetails/?id='+id;
+        function navigateToCertificateDetails_Adm(id){
+            window.location.href='../CertificateDetails_Adm/?id='+id;
         }
 
         const cpf = String(localStorage.getItem('cpf'));
@@ -127,7 +127,7 @@
         var celula4 = linha.insertCell(3); 
         celula1.innerHTML = `<p>${cpf}</p>`;
         celula2.innerHTML = `<p>${codigoRegistro}</p>`;
-        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${codigoRegistro})">Detalhes</button>`;
+        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails_Adm(${codigoRegistro})">Detalhes</button>`;
         celula4.innerHTML = `<button class="ui button blue tiny" onclick="handleToggleValidation(${codigoRegistro},${0} )">Desvalidar</button>`;
     }
 
@@ -141,7 +141,7 @@
         var celula4 = linha.insertCell(3); 
         celula1.innerHTML = `<p>${cpf}</p>`;
         celula2.innerHTML = `<p>${codigoRegistro}</p>`;
-        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails(${codigoRegistro})">Detalhes</button>`;
+        celula3.innerHTML = `<button class="ui button blue tiny" onclick="navigateToCertificateDetails_Adm(${codigoRegistro})">Detalhes</button>`;
         celula4.innerHTML = `<button class="ui button blue tiny" onclick="handleToggleValidation(${codigoRegistro},${1} )">Validar</button>`;
     }
 

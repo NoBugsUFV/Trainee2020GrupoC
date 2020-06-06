@@ -1,5 +1,5 @@
 <?php
-    $id = $_GET['id'];
+    $codigoRegistro = $_GET['codigoRegistro'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,7 +24,7 @@
             window.open('https://expoforest.com.br/wp-content/uploads/2017/05/exemplo.pdf', '_blank');
         }
 
-        const id = <?php echo $id;?>;
+        const codigoRegistro = <?php echo $codigoRegistro;?>;
     </script>
 </head>
 <body>
@@ -78,11 +78,12 @@
 <script>
     function handleCertificates(id){
         $.post("../../../backend/src/controllers/CertificateController/select.php",{
-            id:id
+            codigoRegistro:codigoRegistro
         }).done(function(response){
             var data = JSON.parse(response);
+            console.log(response);
             let valido = "";
-                if(data[4] == 1)
+                if(data[4] == "1")
                     valido = "Sim"
                 else   
                     valido="Não"
@@ -93,5 +94,5 @@
             document.getElementById("txt_descricao").innerHTML = data[3];
         });
     }
-    document.onload = handleCertificates(id);
+    document.onload = handleCertificates(codigoRegistro);
 </script>

@@ -43,12 +43,12 @@
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Validação de Certificados</h3>
                     <p>Você pode validar ou desvalidar um certificado (clique no botão abaixo):</p>
-                    <button class='ui button blue' onclick="navigateToCertificatesValidation()">Gerenciar Validação de Certificados</button>
+                    <button class='ui button large blue labeled icon' onclick="navigateToCertificatesValidation()"><i class="cog icon"></i>Gerenciar Validação de Certificados</button>
                 </div>
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Cadastro de Certificados</h3>
                     <p>Você pode vincular ou desvincular um certificado a um usuário (clique no botão abaixo):</p>
-                    <button class='ui button blue' onclick="navigateToGerenciarCertificados()">Gerenciar Cadastro de Ceritificados</button>
+                    <button class='ui button large blue labeled icon' onclick="navigateToGerenciarCertificados()"><i class="cog icon"></i>Gerenciar Cadastro de Ceritificados</button>
                 </div>
             </div>
         </div>

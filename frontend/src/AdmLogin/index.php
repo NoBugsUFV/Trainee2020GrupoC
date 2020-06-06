@@ -24,24 +24,36 @@
         <div class="ui divider"></div>
 
         <p>Para prosseguir preencha os seguintes campos corretamente:</p>
-        
-        <form action="../../../backend/src/controllers/SessionController/admSession.php" method="POST" id="form" class="ui form">
-            <div class="field">
-                <label for="txt_name">E-mail:*</label>
-                <div class="ui input">
-                    <input type="email" name="email" id="email" placeholder="Informe seu e-mail ..." autofocus required>
-                </div>
-            </div>
-                
-            <div class="field">
-                <label for="txt_numMatricula">Senha:*</label>
-                <div class="ui input">
-                    <input type="password" name="senha" id="senha" placeholder="Informe sua senha ..." autofocus required>
-                </div>
-            </div>
 
-            <button id="buttonLoginSubmit" class='ui button blue'>Entrar</button>
-        </form>
+        <div class="ui grid">
+            <div class="five wide column">
+                
+            </div>
+            <div class="six wide column" id="test">
+                <form action="../../../backend/src/controllers/SessionController/admSession.php" method="POST" id="form" class="ui form">
+                    <div class="field">
+                        <label for="txt_name">E-mail:*</label>
+                        <div class="ui input">
+                            <input id= "testInput" type="email" name="email" id="email" placeholder="Informe seu e-mail ..." autofocus required>
+                        </div>
+                    </div>
+                        
+                    <div class="field">
+                        <label for="txt_numMatricula">Senha:*</label>
+                        <div class="ui input">
+                            <input type="password" name="senha" id="senha" placeholder="Informe sua senha ..." autofocus required>
+                        </div>
+                    </div>
+
+                    <button id="buttonLoginSubmit" class='ui button blue large right labeled icon'><i class="chevron right icon"></i>Entrar</button>
+                </form>
+            </div>
+            <div class="five wide column">
+                
+            </div>
+        </div>
+        
+        
 
 
     </div>
