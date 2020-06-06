@@ -16,7 +16,9 @@
         function navigateToCertificatesValidation(){
             window.location.href='../CertificatesValidation/';
         }
-
+        function navigateToGerenciarCertificados(){
+            window.location.href='../CertificateRegistrationScreen/';
+        }
         const id = String(localStorage.getItem('id'));
     </script>
 </head>

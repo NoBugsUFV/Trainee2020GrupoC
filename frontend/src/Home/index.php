@@ -49,7 +49,7 @@
                 </div>
                 <div class="eight wide column center aligned ">
                     <h2 class="ui second header">Administradores</h3>
-                    <p>Gerencie os certificados dos usuários</p>
+                    <p>Gerencie os certificados dos alunos</p>
                     <button class='ui button large blue labeled icon' onclick="navigateToAdmLogin()"><i class="cog icon"></i>Gerenciar certificados</button>
                 </div>
             </div>
