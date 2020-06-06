@@ -27,11 +27,7 @@
 </head>
 <body>
     <div class="ui container">
-<<<<<<< HEAD
-        <h1 class="ui  center aligned">Sistema de Gerenciamento de Certificadosgu</h1>
-=======
         <h1 class="ui dividing header"> Sistema de Gerenciamento de Certificados</h1>
->>>>>>> aa2032ae6edbf56cccb536429b20d7bfc15aa70a
 
         <div class="ui breadcrumb">
             <div class="section" style="margin-right: 7px;">Você está em:</div>
