@@ -46,22 +46,22 @@
          <div class="field">
          <label>Descrição do certificado</label>
          <textarea placeholder="https://www.instagram.com/p/B3UuvEbFCHs/?utm_source=ig_web_copy_link"></textarea>
-         
+         </div>
          <label>Arquivo do PDF</label>
          <div class="ui input">
          <input type="file" placeholder="PDF">
-        </div>
+        
 
         <label>Validação do certificado</label>
          <div class="ui buttons">
          <button class="ui button">Desvalidado</button>
         <div class="or" data-text="ou"></div>
         <button class="ui blue button">Validado</button>
+          </div>       
+          </div>    
           </div>
-          
-  </div>
-    
-</div>
-  </div>
+          </div>
+      </form>
 </div>
 </body>
+</html>
