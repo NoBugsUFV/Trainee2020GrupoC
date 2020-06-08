@@ -25,7 +25,7 @@
         }
         
         function navigateToEditCertificate(){
-            location.href="../" /* link pra tela de editar os dados*/
+            window.location.href="../EditCertificate/" /* link pra tela de editar os dados*/
         }
 
         const codigoRegistro = <?php echo $codigoRegistro;?>;
