@@ -16,10 +16,9 @@
         function navigateToCertificatesValidation(){
             window.location.href='../CertificatesValidation/';
         }
-        function navigateToGerenciarCertificados(){
-            window.location.href='../CertificateRegistrationScreen/';
+        function navigateToCertificateRegistration(){
+            window.location.href='../CertificateRegistration/';
         }
-        const id = String(localStorage.getItem('id'));
     </script>
 </head>
 <body>
@@ -50,7 +49,7 @@
                 <div class="eight wide column center aligned ">
                     <h3 class="ui second header">Cadastro de Certificados</h3>
                     <p>Você pode vincular ou desvincular um certificado a um usuário (clique no botão abaixo):</p>
-                    <button class='ui button large blue labeled icon' onclick="navigateToGerenciarCertificados()"><i class="cog icon"></i>Gerenciar Cadastro de Ceritificados</button>
+                    <button class='ui button large blue labeled icon' onclick="navigateToCertificateRegistration()"><i class="cog icon"></i>Gerenciar Cadastro de Ceritificados</button>
                 </div>
             </div>
         </div>

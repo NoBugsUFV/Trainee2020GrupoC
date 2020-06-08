@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="styles.css">
     
     <script type="text/javascript">
-        function navigateToCertificateDetails_Adm(id){
-            window.location.href='../CertificateDetails_Adm/?id='+id;
+        function navigateToCertificateDetails_Adm(codigoRegistro){
+            window.location.href='../CertificateDetails_Adm/?codigoRegistro='+codigoRegistro;
         }
 
         const cpf = String(localStorage.getItem('cpf'));

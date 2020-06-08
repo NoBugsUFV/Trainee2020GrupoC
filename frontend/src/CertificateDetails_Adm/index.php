@@ -16,19 +16,15 @@
     
     
     <script type="text/javascript">
-        function navigateToCertificateDetails(){
-            window.location.href="../Home/"
-        }
+        const codigoRegistro = <?php echo $codigoRegistro;?>;
 
         function handleCertificateDownload(){
             window.open('https://expoforest.com.br/wp-content/uploads/2017/05/exemplo.pdf', '_blank');
         }
-        
-        function navigateToEditCertificate(){
-            window.location.href="../EditCertificate/" /* link pra tela de editar os dados*/
-        }
 
-        const codigoRegistro = <?php echo $codigoRegistro;?>;
+        function navigateToEditCertificate(){
+            window.location.href='../EditCertificate/?codigoRegistro='+codigoRegistro;
+        }
     </script>
 </head>
 <body>
@@ -74,9 +70,9 @@
         <div class="group">
             <p class="bold medium label">Certificado:</p>
             <p class="font-cinza small">Baixe o certificado por aqui</p>
-            <button class="ui button blue" onclick="handleCertificateDownload()">Baixar PDF</button>
-            <button class="ui button blue" onclick="navigateToEditCertificate()">Editar dados</button> 
         </div>
+        <button class="ui button blue" onclick="handleCertificateDownload()">Baixar PDF</button>
+        <button class="ui button blue" onclick="navigateToEditCertificate()">Editar dados</button> 
  
  
     </div>
@@ -84,7 +80,7 @@
 </html>
 
 <script>
-    function handleCertificates(id){
+    function handleCertificates(codigoRegistro){
         $.post("../../../backend/src/controllers/CertificateController/select.php",{
             codigoRegistro:codigoRegistro
         }).done(function(response){

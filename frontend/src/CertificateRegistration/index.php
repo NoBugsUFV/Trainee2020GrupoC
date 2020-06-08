@@ -13,11 +13,7 @@
     <link rel="stylesheet" href="styles.css">
     
     <script type="text/javascript">
-        function navigateToCertificatesValidation(){
-            window.location.href='../CertificatesValidation/';
-        }
-
-        const id = String(localStorage.getItem('id'));
+        
     </script>
 </head>
 <body>
@@ -41,35 +37,33 @@
         <p>Cadastre os certificados corretamente</p>
 
         <div class="ui form">
-            <form>
+            <form method='POST' action='../../../backend/src/controllers/CertificateController/insert.php'>
                 <div class="field">
-                    <label>CPF</label>
+                    <label>CPF:</label>
+                    <p class="fonte-cinza small">Informe um CPF válido</p>
                     <div class="ui input">
-                        <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe seu CPF ..." autofocus required>
+                        <input type="text" name="cpf" id="cpf" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Informe o CPF ..." autofocus required>
                     </div>
-                <div>
+                </div>
 
-                
+                <div class="ui checkbox field">
+                    <input type="checkbox" id='valido' name='valido'>
+                    <label>Validar certificado</label>
+                </div>
             
                 <div class="field">
                     <label>Descrição do certificado</label>
-                    <textarea placeholder="https://www.instagram.com/p/B3UuvEbFCHs/?utm_source=ig_web_copy_link"></textarea>
-                <div>
+                    <textarea placeholder="Informe a descrição do certificado ..." id='descricao' name='descricao'></textarea>
+                </div>
 
                 <div class="field">
                     <label>Arquivo do PDF</label>
                     <div class="ui input">
-                        <input type="file" placeholder="PDF">        
+                        <input type="file" id="arquivo" name="arquivo">        
                     </div>
-                <div>
+                </div>
 
-                <div class="field">
-                    <label>Validação do certificado</label>
-                    <div class="ui buttons">
-                        <button class="ui button">Desvalidado</button>
-                        <div class="or" data-text="ou"></div>
-                    <button class="ui blue button">Validado</button>
-                <div>
+                <button id="buttonLoginSubmit" class='ui button blue large right labeled icon'><i class="chevron right icon"></i>Registrar Certificado</button>
         </form>
     <div>
 </div>
