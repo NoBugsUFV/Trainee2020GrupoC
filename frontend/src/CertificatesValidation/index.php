@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Meus Certificados</title>
+    <title>Validação de Certificados</title>
 
     <!-- SEMANTIC UI IMPORTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"><!--SEMANTIC UI CSS-->
@@ -47,7 +47,7 @@
 </head>
 <body>
     <div class="ui container">
-        <h2 class="ui dividing header">Meus Certificados</h2>
+        <h2 class="ui dividing header">Validação de Certificados</h2>
 
         <div class="ui breadcrumb">
             <div class="section" style="margin-right: 7px;">Você está em:</div>
